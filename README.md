@@ -71,3 +71,6 @@ class HomeController
     }
 }
 ```
+
+_Suppression de la route et du controlleur_
+
