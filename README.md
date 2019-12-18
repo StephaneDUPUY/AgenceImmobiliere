@@ -4,8 +4,8 @@ Site exemple pour une agence immobilière avec back office
 
 ## Technologies utilisées
 
-#### Symfony 4.4 LTS à upgrader en 5.0
-#### PHP 7
+#### Symfony 5.0
+#### PHP 7.3.5
 
 _Installation de composer sous Windows_
 
@@ -31,7 +31,7 @@ _Ajout de dépendances_
 
 _Composition du fichier composer.json_
 
-'''
+```
 {
     "require": {
         "symfony/var-dumper": "^5.0",
@@ -39,7 +39,7 @@ _Composition du fichier composer.json_
     }
 }
 
-'''
+```
 
 _Installation de composer_
 
