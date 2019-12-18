@@ -11,7 +11,7 @@ _Installation de composer sous Windows_
 
 https://getcomposer.org/Composer-Setup.exe
 
-**OU**
+
 
 _Installation de composer en ligne de commande_
 
