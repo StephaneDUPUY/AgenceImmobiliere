@@ -11,8 +11,6 @@ _Installation de composer sous Windows_
 
 https://getcomposer.org/Composer-Setup.exe
 
-
-
 _Installation de composer en ligne de commande_
 
 > php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
@@ -34,7 +32,6 @@ DATABASE_URL=mysql://admin:admin@127.0.0.1:3306/siteagenceimmobiliere?serverVers
 _Lancement du server pour test_
 
 > php -S 127.0.0.1:8000 -t pulic
-OK
 
 _Configuration du serveur web_
 
@@ -46,5 +43,13 @@ _Configuration du serveur web_
 **Pour la partie symfony server:[start/stop]**
 **Passer par l'exécutable Symfony pour Windows ici https://get.symfony.com/cli/setup.exe**
 
-OK
+_Création de la route home dans routes.yaml_
 
+```
+# homepage
+home:
+  # chemin racine
+  path: /
+  # methode::class
+  controller: App\controller\HomeController::index
+```
