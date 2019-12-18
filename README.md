@@ -39,3 +39,9 @@ OK
 _Configuration du serveur web_
 
 > composer require symfony/apache-pack
+
+> composer require symfony/web-server-bundle --dev
+
+**BUG VERSION 5.0 SUR WINDOWS**
+**Pour la partie symfony server:[start/stop]**
+**Passer par l'exécutable Symfony pour Windows ici https://get.symfony.com/cli/setup.exe**
