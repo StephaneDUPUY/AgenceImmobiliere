@@ -11,7 +11,9 @@ _Installation de composer sous Windows_
 
 https://getcomposer.org/Composer-Setup.exe
 
-_Chargement de composer en ligne de commande_
+**OU**
+
+_Installation de composer en ligne de commande_
 
 > php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
 
@@ -21,31 +23,19 @@ _Chargement de composer en ligne de commande_
 
 > php -r "unlink('composer-setup.php');"
 
-_Ajout de dépendances_
-
-> composer require symfony/var-dumper
-
-> composer require altorouter/altorouter
-
-
-
-_Composition du fichier composer.json_
-
-```
-{
-    "require": {
-        "symfony/var-dumper": "^5.0",
-        "altorouter/altorouter": "^2.0"
-    }
-}
-
-```
-
-_Installation de composer_
-
-> composer install
-
 _Installation de Symfony_
 
 > composer create-project symfony/website-skeleton SiteAgenceImmobilière
 
+_Création de .env.local_
+
+DATABASE_URL=mysql://admin:admin@127.0.0.1:3306/siteagenceimmobiliere?serverVersion=5.7
+
+_Lancement du server pour test_
+
+> php -S 127.0.0.1:8000 -t pulic
+OK
+
+_Configuration du serveur web_
+
+> composer require symfony/apache-pack
