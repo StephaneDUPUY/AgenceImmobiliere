@@ -45,3 +45,6 @@ _Configuration du serveur web_
 **BUG VERSION 5.0 SUR WINDOWS**
 **Pour la partie symfony server:[start/stop]**
 **Passer par l'exécutable Symfony pour Windows ici https://get.symfony.com/cli/setup.exe**
+
+OK
+
