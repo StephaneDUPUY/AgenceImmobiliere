@@ -154,4 +154,15 @@ class EstateListController extends AbstractController
 ```
 _Ajout d'une page pour la liste des biens_
 
+_Création de la base de données siteagenceimmobiliere_
 
+> $ bin/console d:d:c 
+
+_Ajout de l'entité estate_
+
+> bin/console m:e 
+
+_Migration_
+
+> bin/console m:m
+> bin/console d:m:m
