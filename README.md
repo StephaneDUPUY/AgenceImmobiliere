@@ -124,3 +124,6 @@ _Crée le modèle associé_
 </div>
 {% endblock %}
 ```
+
+_Ajout de Bootstrap dans base.html.twig_
+
