@@ -7,10 +7,10 @@ use App\Repository\EstateRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
-class EstateListController extends AbstractController
+class EstateController extends AbstractController
 {
     /**
-     * @Route("/estate/list", name="estate_list")
+     * @Route("/estate", name="estate")
      */
     public function index(EstateRepository $estateRepository)
     {
@@ -37,8 +37,8 @@ class EstateListController extends AbstractController
 
 
 
-        return $this->render('estate_list/index.html.twig', [
-            'controller_name' => 'EstateListController',
+        return $this->render('estate/index.html.twig', [
+            'controller_name' => 'EstateController',
         ]);
     }
 }
