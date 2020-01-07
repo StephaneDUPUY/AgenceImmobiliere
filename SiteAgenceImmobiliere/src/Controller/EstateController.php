@@ -17,7 +17,7 @@ class EstateController extends AbstractController
            
         $estates = $estateRepository->findAll();
 
-        return $this->render('estate/index.html.twig', [
+        return $this->render('estate/list.html.twig', [
             'estates' => $estates
         ]);
     }
