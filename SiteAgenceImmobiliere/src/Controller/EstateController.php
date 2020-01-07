@@ -37,10 +37,9 @@ class EstateController extends AbstractController
 
          
         $estates = $estateRepository->findAll();
-        dd($estates);
 
         return $this->render('estate/index.html.twig', [
-            'controller_name' => 'EstateController',
+            'estates' => $estates
         ]);
     }
 }
