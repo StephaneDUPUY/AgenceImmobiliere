@@ -327,11 +327,11 @@ Provenant de packagist cocur/slugify
 _Modification de l'entité Estate_
 
 ```
-use Cocur\Slugify;
+use Cocur\Slugify\Slugify;
 
 public function getSlug(): string
     {
-        return (new Slugify())->slugigy($this->title);
+        return (new Slugify())->slugify($this->title);
     }
 ```
 

@@ -2,7 +2,7 @@
 
 namespace App\Entity;
 
-use Cocur\Slugify;
+use Cocur\Slugify\Slugify;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -104,7 +104,7 @@ class Estate
 
     public function getSlug(): string
     {
-        return (new Slugify())->slugigy($this->title);
+        return (new Slugify())->slugify($this->title);
     }
 
     public function setTitle(string $title): self
