@@ -10,9 +10,9 @@ use Symfony\Component\Routing\Annotation\Route;
 class EstateController extends AbstractController
 {
     /**
-     * @Route("/estate", name="estate")
+     * @Route("/estates", name="estatesList")
      */
-    public function index(EstateRepository $estateRepository)
+    public function estatesList(EstateRepository $estateRepository)
     {
            
         $estates = $estateRepository->findAll();
@@ -20,5 +20,20 @@ class EstateController extends AbstractController
         return $this->render('estate/index.html.twig', [
             'estates' => $estates
         ]);
+    }
+
+    /**
+     * @Route("/estates/{slug}-{id}", name="estateShow", requirements={"slug": "[a-z0-9\]*"})
+     */
+    public function estateShow(EstateRepository $estateRepository)
+    {  
+        
+        $estates = $estateRepository->findAll();
+
+        return $this->render('estate/show.html.twig', [
+            'estates' => $estates
+        ]);
+
+
     }
 }
