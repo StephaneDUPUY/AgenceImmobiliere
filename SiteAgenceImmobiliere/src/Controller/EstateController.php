@@ -14,28 +14,7 @@ class EstateController extends AbstractController
      */
     public function index(EstateRepository $estateRepository)
     {
-         
-        /*
-        $estate = new Estate;
-        $estate
-            ->setTitle('Premier bien')
-            ->setPrice(180000)
-            ->setRooms(5)
-            ->setBedrooms(2)
-            ->setDescription('Quelques informations')
-            ->setSurface(50)
-            ->setFloor(2)
-            ->setHeat(1)
-            ->setCity('Nantes')
-            ->setAddress('Route de La Jonelière')
-            ->setPostalCode(44000);
-
-        $em = $this->getDoctrine()->getManager();
-        $em->persist($estate);
-        $em->flush();
-        */
-
-         
+           
         $estates = $estateRepository->findAll();
 
         return $this->render('estate/index.html.twig', [

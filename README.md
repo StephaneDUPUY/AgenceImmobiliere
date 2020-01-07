@@ -302,3 +302,36 @@ public function getPrice(): ?int
         return number_format($this->price, 0, '', ' ');
     }
 ```
+
+_Modification du fichier de configuration Apache_
+
+Dans /etc/apache2/sites-available/000-default.conf
+
+```
+DocumentRoot /var/www/html/AgenceImmobiliere/SiteAgenceImmobiliere/public
+
+
+<Directory "/var/www/html/AgenceImmobiliere/SiteAgenceImmobiliere/public">
+            AllowOverride All
+            Order Allow,Deny
+            Allow from All
+</Directory> 		
+```
+
+_Ajout d'un outil de slug_
+
+Provenant de packagist cocur/slugify
+
+> composer require cocur/slugify
+
+_Modification de l'entité Estate_
+
+```
+use Cocur\Slugify;
+
+public function getSlug(): string
+    {
+        return (new Slugify())->slugigy($this->title);
+    }
+```
+

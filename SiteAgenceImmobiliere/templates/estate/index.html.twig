@@ -14,7 +14,7 @@
             <div class="card">
                 <div class= "card-body">
                     <h5 class="card-title">
-                        <a href="#">{{ estate.title}}</a>
+                        <a href="{{ path('estate.show', {id: estate.id, slug: estate.slug}) }}">{{ estate.title}}</a>
                     </h5>
                     <p class="card-text">{{ estate.city}} ({{estate.postalCode}})</p>
                     <div class="text-primary" style="font-weight: bold; font-size: 2rem;">{{ estate.formattedPrice}} €</div>
