@@ -102,7 +102,7 @@ class Estate
         return $this->title;
     }
 
-    public function getSlug(): string
+    public function getSlug()
     {
         return (new Slugify())->slugify($this->title);
     }

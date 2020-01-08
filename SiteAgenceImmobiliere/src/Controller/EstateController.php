@@ -17,23 +17,20 @@ class EstateController extends AbstractController
            
         $estates = $estateRepository->findAll();
 
-        return $this->render('estate/list.html.twig', [
+        return $this->render('estates/list.html.twig', [
             'estates' => $estates
         ]);
     }
 
     /**
-     * @Route("/estates/{slug}-{id}", name="estateShow", requirements={"slug": "[a-z0-9\]*"})
+     * @Route("/estates/{id}", name="estateShow")
      */
-    public function estateShow(EstateRepository $estateRepository)
+    public function estateShow(Estate $estate)
     {  
-        
-        $estates = $estateRepository->findAll();
-
-        return $this->render('estate/show.html.twig', [
-            'estates' => $estates
+        return $this->render('estates/show.html.twig', [
+            'estate' => $estate
         ]);
 
-
+       
     }
 }
