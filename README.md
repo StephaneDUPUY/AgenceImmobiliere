@@ -9,6 +9,6 @@ Adaptable à d'autres besoins tels que sites d'annonces
 ![Symfony](https://symfony.com/images/logos/header-logo.svg)
 Version 5.0
 
-![PHP](https://cdn.worldvectorlogo.com/logos/php.svg6)
+![PHP]http://pngimg.com/uploads/php/php_PNG50.png)
 Version 7.3.5
 
