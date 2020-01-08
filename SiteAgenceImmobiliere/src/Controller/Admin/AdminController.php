@@ -30,7 +30,7 @@ class AdminController extends AbstractController
     public function estateEdit(Estate $estate, Request $request)
     {  
         $form = $this->createForm(EstateType::class, $estate);
-        
+        $form->handleRequest($request);
         return $this->render('admin/edit.html.twig', [
             'estate' => $estate,
             'form' => $form->createView()
