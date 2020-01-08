@@ -6,6 +6,7 @@ Adaptable à d'autres besoins tels que sites d'annonces
 
 ## Technologies utilisées
 
-#### Symfony 5.0 ![alt text](https://symfony.com/images/logos/header-logo.svg)
+![alt text](https://symfony.com/images/logos/header-logo.svg)
+Version 5.0
 #### PHP 7.3.5
 
