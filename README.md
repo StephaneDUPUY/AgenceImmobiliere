@@ -8,5 +8,7 @@ Adaptable à d'autres besoins tels que sites d'annonces
 
 ![alt text](https://symfony.com/images/logos/header-logo.svg)
 Version 5.0
-#### PHP 7.3.5
+
+![alt text](https://commons.wikimedia.org/wiki/File:PHP-logo.svg?uselang=fr)
+Version 7.3.5
 
