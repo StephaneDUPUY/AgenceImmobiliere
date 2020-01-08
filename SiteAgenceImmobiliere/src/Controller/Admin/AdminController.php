@@ -3,8 +3,10 @@
 namespace App\Controller\Admin;
 
 use App\Entity\Estate;
+use App\Form\EstateType;
 use App\Repository\EstateRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 
 class AdminController extends AbstractController
@@ -25,10 +27,13 @@ class AdminController extends AbstractController
     /**
      * @Route("/admin/{id}", name="estateEdit")
      */
-    public function estateEdit(Estate $estate)
+    public function estateEdit(Estate $estate, Request $request)
     {  
+        $form = $this->createForm(EstateType::class, $estate);
+        
         return $this->render('admin/edit.html.twig', [
-            'estate' => $estate
+            'estate' => $estate,
+            'form' => $form->createView()
         ]);
 
        
