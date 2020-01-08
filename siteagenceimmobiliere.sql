@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  sam. 04 jan. 2020 à 14:25
+-- Généré le :  mer. 08 jan. 2020 à 07:53
 -- Version du serveur :  5.7.26
 -- Version de PHP :  7.3.5
 
@@ -45,7 +45,7 @@ CREATE TABLE IF NOT EXISTS `estate` (
   `sold` tinyint(1) NOT NULL DEFAULT '0',
   `created_at` date NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Déchargement des données de la table `estate`
@@ -53,8 +53,9 @@ CREATE TABLE IF NOT EXISTS `estate` (
 
 INSERT INTO `estate` (`id`, `title`, `description`, `surface`, `rooms`, `bedrooms`, `floor`, `price`, `heat`, `city`, `address`, `postal_code`, `sold`, `created_at`) VALUES
 (1, 'Premier bien', 'Quelques informations', 50, 5, 2, 2, 180000, 1, 'Nantes', 'Route de La Jonelière', '44000', 0, '2019-12-19'),
-(2, 'Premier bien', 'Quelques informations', 50, 5, 2, 2, 180000, 1, 'Nantes', 'Route de La Jonelière', '44000', 0, '2019-12-19'),
-(3, 'Premier bien', 'Quelques informations', 50, 5, 2, 2, 180000, 1, 'Nantes', 'Route de La Jonelière', '44000', 0, '2019-12-19');
+(2, 'Deuxième bien', 'Quelques informations', 50, 5, 2, 2, 190000, 1, 'Carquefou', 'Rue Boucher d\'Argis', '44470', 0, '2019-12-19'),
+(3, 'Troidième bien', 'Quelques informations', 50, 5, 2, 2, 200000, 1, 'La Roche sur Yon', 'Place de La Vendée', '85000', 0, '2019-12-19'),
+(4, 'Quatrième bien', 'Quelques informations', 50, 5, 2, 2, 10000, 1, 'Venansault', 'rue des Alouettes', '85000', 0, '2019-12-19');
 
 -- --------------------------------------------------------
 

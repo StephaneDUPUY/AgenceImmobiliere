@@ -1,0 +1,61 @@
+{% extends 'base.html.twig' %}
+
+{% block title estate.title %}
+
+{% block body %}
+
+<div class="jumbotron">
+    <div class="container">
+        <div class="row ">
+            <div class="col-md-8">
+            </div>
+        </div>
+        <div class="col-md-12 text-center">
+            <h1>{{ estate.title }}</h1>
+            <h2>{{ estate.rooms }} pièces - {{ estate.surface }} m²</h2>          
+            <div class="text-primary" style="font-size: 4rem; font-weight: bold;">{{ estate.formattedPrice }} €</div>
+            <a href="#" class="btn btn-primary">Nous contacter</a>
+        </div>
+    </div>
+</div>
+
+<div class="container mt-4">
+    <p>{{ estate.description }}</p>
+    <div class="row">
+        <div class="col-md-8">
+            <h2>Caractéristiques</h2>
+            <table class="table table-striped">
+                <tbody>
+                    <tr>
+                        <td>Surface</td>
+                        <td>{{ estate.surface }}</td>
+                    </tr>
+                    <tr>
+                        <td>Pièces</td>
+                        <td>{{ estate.rooms }}</td>
+                    </tr>
+                    <tr>
+                        <td>Chambres</td>
+                        <td>{{ estate.bedrooms }}</td>
+                    </tr>
+                    <tr>
+                        <td>Etage</td>
+                        <td>{{ estate.floor }}</td>
+                    </tr>
+                    <tr>
+                        <td>Type de chauffage</td>
+                        <td>{{ estate.heatType }}</td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+        <div class="col-md-4">
+            <h2>Spécificités</h2>
+        </div>
+    </div>
+
+</div>
+
+
+{% endblock %}

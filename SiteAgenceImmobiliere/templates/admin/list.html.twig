@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Gestion des biens{% endblock %}
+
+{% block body %}
+
+<div class="container mt-4">
+    <h1>Gérer les biens</h1>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Titre</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for estate in estates %}
+                <tr>
+                    <td>{{ estate.title }}</td>
+                    <td>
+                        <a href="{{ path('estateEdit', {id: estate.id}) }}" class="btn btn-secondary">Modifier</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+{% endblock %}

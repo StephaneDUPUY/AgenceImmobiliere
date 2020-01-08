@@ -1,33 +1,33 @@
 <?php
 
-namespace App\Controller;
+namespace App\Controller\Admin;
 
 use App\Entity\Estate;
 use App\Repository\EstateRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
-class EstateController extends AbstractController
+class AdminController extends AbstractController
 {
     /**
-     * @Route("/estates", name="estatesList")
+     * @Route("/admin", name="adminList")
      */
     public function estatesList(EstateRepository $estateRepository)
     {
            
         $estates = $estateRepository->findAll();
 
-        return $this->render('estates/list.html.twig', [
+        return $this->render('admin/list.html.twig', [
             'estates' => $estates
         ]);
     }
 
     /**
-     * @Route("/estates/{id}", name="estateShow")
+     * @Route("/admin/{id}", name="estateEdit")
      */
-    public function estateShow(Estate $estate)
+    public function estateEdit(Estate $estate)
     {  
-        return $this->render('estates/show.html.twig', [
+        return $this->render('admin/edit.html.twig', [
             'estate' => $estate
         ]);
 

@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use Cocur\Slugify\Slugify;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -10,8 +11,8 @@ use Doctrine\ORM\Mapping as ORM;
 class Estate
 {
     const HEAT = [
-        0 => 'electric',
-        1 => 'gaz',
+        0 => 'Electrique',
+        1 => 'Gaz',
     ];
 
     /**
@@ -99,6 +100,11 @@ class Estate
     public function getTitle(): ?string
     {
         return $this->title;
+    }
+
+    public function getSlug()
+    {
+        return (new Slugify())->slugify($this->title);
     }
 
     public function setTitle(string $title): self
@@ -190,6 +196,11 @@ class Estate
         return $this->heat;
     }
 
+    public function getHeatType(): string
+    {
+        return self::HEAT[$this->heat];
+    }
+    
     public function setHeat(int $heat): self
     {
         $this->heat = $heat;
