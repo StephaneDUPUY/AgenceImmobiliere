@@ -31,6 +31,13 @@ class AdminController extends AbstractController
     {  
         $form = $this->createForm(EstateType::class, $estate);
         $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $em = $this->getDoctrine()->getManager();
+            $em->flush();
+            $this->addFlash('success', 'Bien modifié');
+            return $this->redirectToRoute('adminList');
+        }
         return $this->render('admin/edit.html.twig', [
             'estate' => $estate,
             'form' => $form->createView()
