@@ -4,6 +4,7 @@ namespace App\Controller\Admin;
 
 use App\Entity\Estate;
 use App\Form\EstateType;
+use App\Form\EstateNewType;
 use App\Repository\EstateRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -51,7 +52,7 @@ class AdminController extends AbstractController
      */
     public function estateNew(Estate $estate, Request $request)
     {
-        $form = $this->createForm(EstateType::class, $estate);
+        $form = $this->createForm(EstateNewType::class, $estate);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
