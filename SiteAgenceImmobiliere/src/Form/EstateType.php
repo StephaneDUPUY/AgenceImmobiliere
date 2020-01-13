@@ -3,7 +3,9 @@
 namespace App\Form;
 
 use App\Entity\Estate;
+use PhpParser\Builder\Property;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -19,7 +21,7 @@ class EstateType extends AbstractType
             ->add('bedrooms')
             ->add('floor')
             ->add('price')
-            ->add('heat')
+            ->add('heat', ChoiceType::class, ['choices' => $this->getReverseChoice()])
             ->add('city')
             ->add('address')
             ->add('postal_code')
@@ -33,5 +35,15 @@ class EstateType extends AbstractType
             'data_class' => Estate::class,
             'translation_domain' => 'forms'
         ]);
+    }
+
+    private function getReverseChoice()
+    {
+        $choice = Estate::HEAT;
+        $array = [];
+        foreach($choice as $key => $value) {
+            $array[$value] = $key;
+        }
+        return $array;
     }
 }
