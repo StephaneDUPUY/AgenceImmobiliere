@@ -4,7 +4,6 @@ namespace App\Controller\Admin;
 
 use App\Entity\Estate;
 use App\Form\EstateType;
-use App\Form\EstateNewType;
 use App\Repository\EstateRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -26,19 +25,25 @@ class AdminController extends AbstractController
     }
 
     /**
+     * @Route("/admin/new", name="adminNew")
+     */
+    public function estatesNew(EstateRepository $estateRepository)
+    {
+           
+        $estates = $estateRepository->findAll();
+
+        return $this->render('admin/new.html.twig', [
+            'estates' => $estates
+        ]);
+    }
+
+    /**
      * @Route("/admin/{id}", name="estateEdit")
      */
     public function estateEdit(Estate $estate, Request $request)
     {  
         $form = $this->createForm(EstateType::class, $estate);
         $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
-            $em = $this->getDoctrine()->getManager();
-            $em->flush();
-            
-            return $this->redirectToRoute('adminList');
-        }
         return $this->render('admin/edit.html.twig', [
             'estate' => $estate,
             'form' => $form->createView()
@@ -47,24 +52,5 @@ class AdminController extends AbstractController
        
     }
 
-    /**
-     * @Route("/admin/new", name="estateNew")
-     */
-    public function estateNew(Estate $estate, Request $request)
-    {
-        $form = $this->createForm(EstateNewType::class, $estate);
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
-            $em = $this->getDoctrine()->getManager();
-            $em->flush();
-         
-            return $this->redirectToRoute('adminList');
-        }
-        return $this->render('admin/new.html.twig', [
-            'estate' => $estate,
-            'form' => $form->createView()
-        ]);
-    }
+    
 }
-
