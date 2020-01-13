@@ -24,7 +24,6 @@ class EstateType extends AbstractType
             ->add('address')
             ->add('postal_code')
             ->add('sold')
-            ->add('created_at')
         ;
     }
 
@@ -32,6 +31,7 @@ class EstateType extends AbstractType
     {
         $resolver->setDefaults([
             'data_class' => Estate::class,
+            'translation_domain' => 'forms'
         ]);
     }
 }
