@@ -35,7 +35,7 @@ class AdminController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $em->flush();
-            $this->addFlash('success', 'Bien modifié');
+            
             return $this->redirectToRoute('adminList');
         }
         return $this->render('admin/edit.html.twig', [
@@ -45,4 +45,25 @@ class AdminController extends AbstractController
 
        
     }
+
+    /**
+     * @Route("/admin/new", name="estateNew")
+     */
+    public function estateNew(Estate $estate, Request $request)
+    {
+        $form = $this->createForm(EstateType::class, $estate);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $em = $this->getDoctrine()->getManager();
+            $em->flush();
+         
+            return $this->redirectToRoute('adminList');
+        }
+        return $this->render('admin/new.html.twig', [
+            'estate' => $estate,
+            'form' => $form->createView()
+        ]);
+    }
 }
+
