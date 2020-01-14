@@ -27,14 +27,13 @@ class AdminController extends AbstractController
     /**
      * @Route("/admin/new", name="adminNew")
      */
-    public function estatesNew(EstateRepository $estateRepository)
+    public function estatesNew(Request $request)
     {
            
-        $estates = $estateRepository->findAll();
+        $estate = new Estate;
 
-        return $this->render('admin/new.html.twig', [
-            'estates' => $estates
-        ]);
+        return $this->render('admin/new.html.twig');
+            
     }
 
     /**
@@ -44,11 +43,17 @@ class AdminController extends AbstractController
     {  
         $form = $this->createForm(EstateType::class, $estate);
         $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $em = $this->getDoctrine()->getManager();
+            $em->flush();
+           
+            return $this->redirectToRoute('adminList');
+        }
+
         return $this->render('admin/edit.html.twig', [
             'estate' => $estate,
-            'form' => $form->createView()
-        ]);
-
+            'form' => $form->createView() ]);
        
     }
 
