@@ -18,7 +18,7 @@
                 <tr>
                     <td>{{ estate.title }}</td>
                     <td>
-                        <a href="{{ path('estateEdit', {id: estate.id}) }}" class="btn btn-secondary">Modifier</a>
+                        <a href="{{ path('estateEdit', {id: estate.id}) }}" class="btn btn-secondary">Modifier le bien</a>
                     </td>
                 </tr>
             {% endfor %}
@@ -26,7 +26,7 @@
     </table>
 </div>
 <div class="container mt-4 ">
-    <a href="{{ path('estateNew') }}" class="btn btn-primary">Créer</a>
+    <a href="{{ path('estateNew') }}" class="btn btn-primary">Ajouter un nouveau bien</a>
 </div>
 
 {% endblock %}

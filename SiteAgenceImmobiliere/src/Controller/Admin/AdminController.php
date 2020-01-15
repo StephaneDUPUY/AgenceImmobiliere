@@ -25,7 +25,7 @@ class AdminController extends AbstractController
     }
 
     /**
-     * @Route("/admin/new", name="estateNew")
+     * @Route("/admin/estate/new", name="estateNew")
      */
     public function estatesNew(Request $request)
     {
@@ -50,7 +50,7 @@ class AdminController extends AbstractController
     }
 
     /**
-     * @Route("/admin/{id}", name="estateEdit")
+     * @Route("/admin/estate{id}", name="estateEdit")
      */
     public function estateEdit(Estate $estate, Request $request)
     {  
