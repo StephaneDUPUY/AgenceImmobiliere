@@ -38,6 +38,7 @@ class AdminController extends AbstractController
             $em = $this->getDoctrine()->getManager();
             $em->persist($estate);
             $em->flush();
+            $this->addFlash('success', 'Bien ajouté avec succès');
            
             return $this->redirectToRoute('adminList');
         }
@@ -50,7 +51,7 @@ class AdminController extends AbstractController
     }
 
     /**
-     * @Route("/admin/estate{id}", name="estateEdit")
+     * @Route("/admin/estate/edit/{id}", name="estateEdit", methods="GET|POST")
      */
     public function estateEdit(Estate $estate, Request $request)
     {  
@@ -60,6 +61,7 @@ class AdminController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $em->flush();
+            $this->addFlash('success', 'Bien modifié avec succès');
            
             return $this->redirectToRoute('adminList');
         }
@@ -68,6 +70,22 @@ class AdminController extends AbstractController
             'estate' => $estate,
             'form' => $form->createView() ]);
        
+    }
+
+    /**
+     * @Route("/admin/estate/delete/{id}", name="estateDelete", methods="POST")
+     */
+    public function estateDelete(Estate $estate, Request $request)
+    {
+        if ($this->isCsrfTokenValid('delete' . $estate->getId(), $request->request->get('_token'))) {
+            $em = $this->getDoctrine()->getManager();
+            $em->remove($estate);
+            $em->flush();
+            $this->addFlash('success', 'Bien supprimé avec succès');
+
+        }
+        
+        return $this->redirectToRoute('adminList');
     }
 
     

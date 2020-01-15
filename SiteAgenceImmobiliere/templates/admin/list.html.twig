@@ -6,6 +6,13 @@
 
 <div class="container mt-4">
     <h1>Gérer les biens</h1>
+
+    {% for message in app.flashes('success') %}
+        <div class="alert alert-success">
+            {{ message }}
+        </div>
+    {% endfor %}
+
     <table class="table table-striped">
         <thead>
             <tr>
@@ -19,6 +26,11 @@
                     <td>{{ estate.title }}</td>
                     <td>
                         <a href="{{ path('estateEdit', {id: estate.id}) }}" class="btn btn-secondary">Modifier le bien</a>
+                        <form method="post" action="{{ path('estateDelete', {id: estate.id}) }}" style="display: inline-block" onsubmit="return confirm('Confirmation')">
+                            <input type="hidden" name="_methode" value="DELETE">
+                            <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ estate.id) }}">
+                            <button class="btn btn-danger">Supprimer</buton>
+                        </form>
                     </td>
                 </tr>
             {% endfor %}
