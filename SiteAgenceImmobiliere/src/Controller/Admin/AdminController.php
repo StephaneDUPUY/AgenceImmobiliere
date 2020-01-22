@@ -27,7 +27,7 @@ class AdminController extends AbstractController
     /**
      * @Route("/admin/estate/new", name="estateNew")
      */
-    public function estatesNew(Request $request)
+    public function estateNew(Request $request)
     {
         $estate = new Estate;
                 
