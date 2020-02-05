@@ -18,9 +18,17 @@
                 
                     <li class="nav-item">
                         <a class="nav-link" href="{{ path('estatesList') }}">Liste des biens</a>
-                    </li>
-                    
+                    </li>                    
                 </ul>
+                {# check if user connected #}
+                {% if app.user %}
+                    {# navbar to display button deconnexion #}
+                    <ul class="nav-bar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ path('app_logout') }}" >Se déconnecter</a>
+                        </li>
+                    </ul>      
+                {% endif %}
             </div>
         </nav>
             {% block body %}{% endblock %}
