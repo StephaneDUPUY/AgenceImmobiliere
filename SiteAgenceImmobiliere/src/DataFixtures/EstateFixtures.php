@@ -23,7 +23,7 @@ class EstateFixtures extends Fixture
             $estate 
                 ->setTitle($faker->words(3, true))
                 ->setDescription($faker->sentences(3, true))
-                ->setSurface($faker->numberBeween(20, 350))
+                ->setSurface($faker->numberBetween(20, 350))
                 ->setRooms($faker->numberBetween(2, 10))
                 ->setBedrooms($faker->numberBetween(1, 9))
                 ->setFloor($faker->numberBetween(0, 15))
