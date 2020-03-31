@@ -1,14 +1,9 @@
-# Agence Immobiliere
 
-Site exemple pour une agence immobilière avec back office
+# Real estate agency
 
-Adaptable à d'autres besoins tels que sites d'annonces
+Example of a site for a real estate agency with back office
 
-## Technologies utilisées
+Adaptable to other needs such as ad sites
 
-<img src="https://symfony.com/images/logos/header-logo.svg"> Version 5.0
-
-<img src="http://pngimg.com/uploads/php/php_PNG50.png" width="150"> Version 7.3.5
-
-<img src="https://mars13.fr/wp-content/uploads/2018/01/bootstrap-stack.png" width="100"> Version 4.4.1
+## Technologies used
 
